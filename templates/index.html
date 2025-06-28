@@ -1,33 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>WorstMovieToWatch 🎬</title>
+  <meta charset="UTF-8" />
+  <title>Crapify 🎬 — Храм худшего кино</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="/static/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-  <h1>🎥 WorstMovieToWatch</h1>
-  <p>Жми кнопку, если хочешь угарнуть над реально плохим фильмом!</p>
+  <h1>Crapify 🎬</h1>
+  <p>Добро пожаловать в храм худшего кино! Жми кнопку и наслаждайся трэшем.</p>
   <button onclick="getBadMovie()">Показать трэш!</button>
 
-  <div id="movie" style="margin-top: 20px;"></div>
+<div id="movie" style="margin-top: 20px; display: none;"></div>
 
   <script>
     async function getBadMovie() {
       const res = await fetch("/api/random-bad-movie");
       const data = await res.json();
-
       const el = document.getElementById("movie");
+
       if (data.error) {
         el.innerHTML = `<p>Ошибка: ${data.error}</p>`;
         return;
       }
-
+      el.style.display = "block";
       el.innerHTML = `
         <h2>${data.title} (${data.release_date})</h2>
         <p><strong>Рейтинг:</strong> ${data.rating}</p>
         <p>${data.overview}</p>
-        ${data.poster ? `<img src="${data.poster}" style="max-width: 300px;" />` : ""}
+        ${
+          data.poster
+            ? `<img src="${data.poster}" alt="Постер фильма ${data.title}" />`
+            : ""
+        }
       `;
     }
   </script>

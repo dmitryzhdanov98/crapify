@@ -1,24 +1,75 @@
+/* Crapify styles */
+
 body {
-  font-family: sans-serif;
-  max-width: 800px;
+  font-family: 'Orbitron', sans-serif;
+  max-width: 720px;
   margin: 40px auto;
   padding: 0 20px;
-  background-color: #fafafa;
-  color: #333;
+  background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+  color: #f0f0f0;
+  text-align: center;
 }
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #ff4444;
+  text-shadow: 0 0 8px #ff4444aa;
+  user-select: none;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
 button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background: #ff4444;
+  padding: 15px 30px;
+  font-size: 1.25rem;
+  background-color: #ff4444;
   border: none;
-  color: white;
+  border-radius: 12px;
   cursor: pointer;
-  border-radius: 5px;
+  color: white;
+  box-shadow: 0 4px 15px #ff444480;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
 }
+
 button:hover {
-  background: #dd2222;
+  background-color: #ff2222;
+  box-shadow: 0 6px 20px #ff222280;
 }
-img {
-  margin-top: 10px;
-  border-radius: 8px;
+
+#movie {
+  margin-top: 40px;
+  background: #3a3a3a;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #ff4444aa;
+  text-align: left;
+}
+
+#movie h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #ff6666;
+}
+
+#movie p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #eee;
+}
+
+#movie img {
+  max-width: 100%;
+  max-height: 400px;
+  margin-top: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #ff4444aa;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
